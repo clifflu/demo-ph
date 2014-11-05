@@ -1,7 +1,11 @@
 <?php
 
+function client_ip() use ($_SERVER) {
+    print_r($_SERVER);
+    return "";
+}
+
 printf(
-    "Greetings, TCP/IP from %s, Browser from %s",
-    $_SERVER['REMOTE_ADDR'],
-    $_SERVER['HTTP_X_FORWARDED_FOR']
+    "Greetings, User from %s",
+    client_ip();
 );
