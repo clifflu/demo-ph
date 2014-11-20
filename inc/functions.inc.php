@@ -1,7 +1,12 @@
 <?php
 
+function starts_with($haystack, $needle) {
+    return substr($haystack, 0, strlen($needle)) === $needle;
+}
+
 function is_proxy($ip) {
-    if ('10.' == substr($ip, 0, 3)) {
+    if (starts_with($ip, '10.24.')) {
+        // Hardcoded for AWS VPC
         return True;
     }
 
